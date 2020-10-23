@@ -1,0 +1,19 @@
+<script>
+var notas = ["A", "B", "C", "D", "E", "F", "G" ];
+var alteraciones = ["#", "b"] ;
+var modos = ["J&oacute;nico (I)", "D&oacute;rico (II)", "Frigio (III)", "Lidio (IV)", "Mixolidio (V)","E&oacute;lico (VI)", "Locrio (VII)"] ;
+var output = "";
+for (i = 0; i < 4; i++) {
+	var pos_nota = Math.floor(Math.random() * notas.length);
+	var pos_modo = Math.floor(Math.random() * modos.length);
+	var alteracion = "";
+	if (Math.floor(Math.random() * 2) == 1){
+		alteracion = (alteraciones[Math.floor(Math.random() * alteraciones.length)]);
+	}
+	output += "|&nbsp;&nbsp;&nbsp;" + notas[pos_nota] + alteracion + " " + modos[pos_modo] + "&nbsp;&nbsp;&nbsp;" ;
+	notas.splice(pos_nota, 1);
+	modos.splice(pos_modo, 1);
+}
+output += "|"
+document.write("<center><h2>"+output+"</h2></center>")
+</script>
